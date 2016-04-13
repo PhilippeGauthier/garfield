@@ -1,0 +1,218 @@
+.agent-individual {
+	.container {
+		padding-left: 0;
+		padding-right: 0;			
+	}
+	@include breakpoint($medium) {
+		.container {
+			padding-left: 15px;
+			padding-right: 15px;					
+		}
+	}
+	aside {
+		padding-right: 15px;
+		@include breakpoint($large) {
+			padding-right: $bPadding;
+		}
+		img {
+			max-width: 200px;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.agent-name {
+			@include hlmedium($hFontB);
+			margin-top: 10px;
+		}
+
+		svg {
+			height: 20px;
+			width: 20px;
+			margin-right: 3px;
+		}
+		svg, li {
+			vertical-align: middle;
+		}
+		ul {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		li, li a {
+			font-family: $hFontM;
+			font-size: 11px;
+			margin-bottom: 10px;
+			&:hover {
+				svg * {
+					fill: $text-green;
+				}
+				color: $text-green;
+				* {
+					color: $text-green;
+				}
+			}
+		}
+		.dotted {
+			margin-top: 30px;
+			margin-bottom: 0;
+			@include breakpoint($small) {
+				display: none;
+			}
+		}
+		@include breakpoint($medium) {
+			img {
+				margin-top: 183px;
+			}
+		}
+	}
+	main {
+		padding: $bPadding/2;
+		
+		@include breakpoint($large) {
+			padding: $bPadding;
+			min-height: 650px;
+		}
+		background-color: #fff;
+		.agent-info {
+			@include clearfix;
+			margin-bottom: $bPadding/2;
+			@include breakpoint($small) {
+				margin-bottom: $bPadding;
+			}
+		}
+		.agent-info * {
+			@include span (last 9 of 9 );
+			
+		}
+		h2.agent-title {
+			display: none;
+			@include breakpoint($medium) {
+				margin-bottom: 30px;
+				display: block;
+			}
+		}
+		h2 {
+			margin-bottom: 30px;
+		}
+		p:first-of-type, span:first-of-type {
+			margin-top: 0;
+		}
+		p:last-of-type, span:last-of-type {
+			margin-bottom: 0;
+		}
+		p, span {
+			font-family: $hFontM;
+			line-height: 26px;
+		}
+		.green-specs {
+			margin-bottom: $bPadding/2;
+			@include breakpoint($small) {
+				margin-bottom: $bPadding;
+			}
+			h3 {
+				padding-bottom: 20px;
+				border-bottom: 1px solid $text-green;
+				margin-bottom: $bPadding/2;
+				@include breakpoint($small) {
+					margin-bottom: $bPadding;
+				}
+				font-size: 16px;
+				font-family: $bFont;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+			.press {
+				@include clearfix;
+			}
+			.press-item {
+				display: block;
+				position: relative;
+				margin: 0;
+				padding: 0 15px;
+				div {
+					@include flex-vert;
+					height: 150px;
+				}
+				&:hover {
+					// background-color: darken($lightest-green, 3%);
+				}
+				p, img {
+					text-align: center;
+					margin: 0 auto;
+					display: block;
+				}
+				p {
+					font-size: 14px;
+				}
+				p {
+					margin: 10px auto;
+				}
+			}
+		}
+		.agent-properties {
+			padding: 30px;
+			margin-bottom: $bPadding/2;
+			@include breakpoint($small) {
+				margin-bottom: $bPadding;
+			}
+			@include span(full no-gutter);
+			@include clearfix;
+		}
+		.recent-transactions {
+			@include span(full no-gutter);
+			@include clearfix;
+			&.sale {
+				margin-bottom: 40px;
+			}
+			h2 {
+				margin-bottom: 30px;
+			}
+			h3 {
+				border-bottom: 2px solid $dark-gray;
+				padding-bottom: 10px;
+				font-size: 16px;
+				font-family: $bFont;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+			span {
+				@include hbase($hFontB);
+			}
+			ul {
+				@include clearfix;
+				border-bottom: 1px solid lighten($dark-gray, 50%);
+				// display: flex;
+			}
+			li {
+				@include gallery(2 of 4);
+				padding: 20px 0;
+				padding-right: 5px;
+				font-family: $hFontM;
+				font-size: 16px;
+				text-align: left;
+				&:nth-child(4n+2),&:nth-child(4n+3) {
+					display: none;
+				}
+					&:nth-child(4n+4) {
+						text-align: right;
+					}
+				@include breakpoint($small) {
+					@include gallery(1 of 4 after);
+					&:nth-child(4n+2),&:nth-child(4n+3) {
+						display: inline-block;
+					}
+					&:nth-child(4n+4) {
+						text-align: left;
+					}
+				}
+				&.transaction-details {
+					font-size: 14px;
+				}
+
+			}
+			// li:nth-child(4n + 3),li:nth-child(4n + 4)  {
+			// 	text-align: right;
+			// }
+		}
+	}
+}
+

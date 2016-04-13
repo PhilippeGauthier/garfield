@@ -1,0 +1,88 @@
+.landing-sub-nav {
+	padding: 45px 0;
+	@include clearfix;
+	overflow: hidden;
+	.grid-3 {
+		padding-bottom: 30px;
+	}
+	svg {
+		* {
+			fill: $text-green;
+		}
+		height: 80px;
+		width: 80px;
+		margin-bottom: 10px;
+	}
+	p {
+		max-width: 80%;
+	}
+	@include breakpoint($medium) {
+		.grid-3 {
+			position: relative;
+			@include clearfix;
+			padding-top: 25%;
+			padding-bottom: 0;
+			&:focus {
+				outline: none;
+			}
+			p {
+				max-width: 100%;
+			}
+		}
+		figure {
+			position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    margin: 0;
+	    padding: 20px;
+	    display: block;
+	    width: 100%;
+		}
+		p, span {
+			opacity: 0;
+			overflow: hidden;
+			margin: 0;
+		}
+		svg {
+			transition: all 500ms ease;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: $bPadding;
+			margin-bottom: 20px;
+			height: 116px;
+			width: 116px;
+		}	
+		a {
+			&:hover {
+				svg {
+					opacity: 0;
+					margin-top: -50%;
+				}
+				h4 {
+					margin-bottom: 15px;
+					color: $text-green;
+				}
+				p, span {
+					opacity: 1;
+					max-height: 300px;
+					margin-bottom: 10px;
+				}
+			}
+		}	
+	}
+	h4,.title {
+		@include hsmedium($hFontB);
+		margin: 0;
+	}
+	.sub-title {
+		@include hmin($bFont);
+		font-weight: 700;
+		&:hover {
+			color: $text-green;
+		}
+	}
+	p {
+		@include hsmall($hFontM);
+	}
+
+}

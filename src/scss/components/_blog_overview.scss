@@ -1,0 +1,188 @@
+.blog {
+	span {
+		text-transform: uppercase;
+	}
+	.blog-container {
+		@include clearfix;
+		position: relative;
+	}
+	.featured {
+		background-color: $bg-seafoam;
+		@include span(full no-gutter);
+		@include clearfix;
+	}
+	.news-left, .news-right {
+		background-color: #fff;
+	}
+	.blog-left {
+		@include span (full);
+		.truncated {
+			display: none;
+		}
+		@include breakpoint($tiny) {
+			.truncated {
+				display: block;
+			}
+			.entry {
+				padding-bottom: $bPadding/2;
+			}
+		}
+		@include breakpoint($medium) {
+			@include span (7 of 12 after);
+			.entry {
+				margin-bottom: $bPadding;
+				padding-bottom: $bPadding;
+			}
+		}
+	}
+	.blog-right {
+		@include span (full);
+		@include breakpoint($medium) {
+			@include span (last 4 of 12 after);
+		}
+	}
+	.entry, .authors {
+		@include span(full no-gutter);
+		@include clearfix;
+	}
+	.blog-header {
+		color: darken($light-font-color,10%);
+		@include btiny($hFontM);
+		padding-bottom: .75em;
+		border-bottom: 1px solid $modal-text;
+		margin-bottom: 1.5em;
+	}
+	.entries {
+		@include span(full no-gutter);
+	}
+	.entry {
+		margin-bottom: $bPadding/2;
+		border-bottom: 1px solid $light-font-color;
+		padding-bottom: 0;
+		@include span(full no-gutter);
+
+	}
+	.preview-image-container {
+		@include span(full no-gutter);
+		margin-bottom: 30px;
+		@include breakpoint($tiny) {
+			margin-bottom: 0;
+			@include span(3 of 7 no-gutter);
+		}
+		
+		@include clearfix;
+		position: relative;	
+	}
+	.preview-image, .featured-image {
+		.mask {
+			z-index: 11;
+			background-color: black;
+			height: 100%;
+			transition: all .25s;
+			opacity: 0;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+		&:hover {
+			transition: all .25s;
+			.mask {
+				opacity: 0.2;
+			}
+		}
+	}
+	.preview-image {
+		width: 100%;
+		padding-top: 60%;
+		display: block;
+		position: relative;
+		background-position:center;
+		@include breakpoint($tiny) {
+			padding-top: 100%;
+		}
+	}
+	.date,.author {
+		text-transform: none;
+		@include btiny($hFontB);
+	}
+	.author {
+		color: $text-green;
+	}
+	.authors {
+		ul {
+			margin-bottom: 30px;
+		}
+		li {
+			display: block;
+			a {
+				@include hsmall($hFontB);
+			}
+		}
+	}
+	.preview,.blog.blog-entry {
+		@include span(full);
+		@include breakpoint($tiny) {
+			@include span(last 4 of 7 );
+			padding-left: 30px;
+		}
+		
+		
+		.divider {
+			height: 1px;
+			width: 60px;
+			display: block;
+			margin: 20px 0;
+			background-color: $modal-text;
+		}
+		.blog-title {
+			@include hlarge;
+			text-decoration: none;
+		}
+	}
+	.read-more {
+		@include hbase($hFontMI);
+		color: $text-green;
+	}
+	.author-list {
+		@include flex-hor;
+		margin-bottom: 20px;
+
+	}
+	.author-image {
+		margin-right: 10px;
+		border-radius: 50%;
+		height: $bPadding;
+		width: $bPadding;
+	}
+}
+
+.social.gray {
+	.fa-circle {
+		border: 1px solid $modal-text;
+	}
+	.fa-inverse {
+		color: $modal-text;
+	}
+}
+
+.featured-image {
+	background-size: cover;
+	position: relative;
+	background-position: center;
+}
+
+.pagination {
+	margin-top: 20px;
+	.older i {
+		margin-right: 10px;
+	}
+	.newer {
+		float: right;
+		i {
+			margin-left: 10px;
+		}
+	}
+}

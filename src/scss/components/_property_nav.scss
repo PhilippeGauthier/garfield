@@ -1,0 +1,232 @@
+.Select {
+	// border: 1px solid transparent;
+	&.is-open {
+		.Select-control {
+			// border: 1px solid $dark-gray;
+			border-radius: 0;
+		}
+	}
+}
+
+
+.sort-bar {
+	* {
+		&:focus, &:active {
+			outline: none !important;
+		}
+	}
+}
+
+
+.Select-placeholder, .sort-bar, .Select-menu {
+	font-family: $hFontM;
+	font-size: 13px;
+}
+
+.Select-menu {
+	box-shadow: none;
+	// border: 1px solid $dark-gray;
+	// border-top: 1px solid $light-gray;
+}
+.Select-menu-outer {
+	border-radius: 0;
+
+}
+
+.Select-option {
+	&.is-focused {
+		background-color: $text-green;
+		color: white;
+	}
+	&:last-child {
+		border-radius: 0;
+	}
+}
+
+.Select-arrow {
+	font-family: FontAwesome;
+	border: 0;
+	font-size: 20px;
+	right: 25px;
+	top: 10px;
+	&:after {
+		content: '\f107';
+	}
+}
+
+// .grid {
+// 	margin-top: 100px;
+// }
+
+.property_nav {
+	background-color: $dark-gray;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	// position: fixed;
+	// z-index: 100;
+	// width: 100%;
+	a {
+		color: white;
+		cursor: pointer;
+		&:hover, &:focus {
+			color: white;
+		}
+	}
+	.rent_or_buy, .nav, .views {
+		display: inline-block;
+		margin: 0;
+	}
+	.nav {
+		display: none;
+		@include breakpoint($small) {
+			display: inline-block;
+		}
+		a {
+			background-color: #fff;
+			color: $base-font-color;
+			padding: 8px 15px;
+			&:hover, &:focus {
+				color: $base-font-color;	
+				background-color: #fff;
+				box-shadow: none;
+			}
+		}
+
+		.Select-control {
+			border-radius: 2px;
+		}
+		.dropdown-menu {
+			li {
+				display: block;
+			}
+			a {
+				&:hover, &:focus {
+					color: white;
+					background-color: $green;
+				}
+			}
+
+		}
+	}
+	.rent-or-buy {
+		padding: 8px 4px;
+		#buy {
+			margin-right: 4px;
+		}
+		background-color: black;
+		vertical-align: top;
+		display: inline-block;
+		a {
+			background-color: black;
+			padding: 5px 15px;
+			transition: .1s;
+			background-color: lighten(black,10%);
+			&:hover, &:focus {
+				background-color: lighten(black,15%);
+			}
+			&.active {
+				background-color: $green;
+			}
+		}
+	}
+	.filter-view, .view-type {
+		@include breakpoint($tiny) {
+			display: inline-block;
+		}
+		
+
+
+		
+	}
+	.filter-view {
+		vertical-align: top;
+		.rent-or-buy, .nav {
+			vertical-align: middle;
+		}
+
+	}
+	.view-type {
+		float: left;
+		margin-top: 10px;
+		@include breakpoint($tiny) {
+			float: right;
+			margin-top: 0;
+		}
+	}
+	.views {
+		height: 45px;
+		li {
+			padding-top: 5px;
+			&:last-of-type {
+				margin-left: 15px;
+			}
+			a.active:hover i{
+				color: $text-green;
+			}
+		}
+		span {
+			color: white;
+		}
+		i {
+			margin-right: 5px;
+		}
+		a {
+			padding-top: 5px;
+			font-weight: 300;
+			padding-bottom: 10px;
+			&:hover, &:focus {
+				border-bottom: 2px solid white;
+			}
+			&.active {
+				color: $green;
+				padding-bottom: 10px;
+				border-bottom: 2px solid $green;
+				span {
+					color: $green;
+				}
+				&:hover, &:focus {
+					color: $green;
+					border-bottom: 2px solid $green;
+				}
+			}
+		}
+	}
+}
+
+.sort-nav {
+	background-color: #fff;
+	// position: fixed;
+	// z-index: 100;
+	// margin-top: 138px;
+	// width: 100%;
+	.sort-bar, .sort-bar-divider {
+		display:inline-block;
+	}
+	.sort-bar {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		vertical-align: middle;
+	}
+	.sort-bar-divider {
+		width: 1px;
+		height: 64px;
+		vertical-align: top;
+		border-right: 1px solid $light-font-color;
+		margin-left: 20px;
+	}
+	.sort-select {
+		width: 210px;
+		@include breakpoint($small) {
+			width: 250px;
+		}
+		
+
+	}
+	.Select-control {
+		border: none;
+	.Select-placeholder {
+		padding-left: 20px;
+		color: $light-font-color;
+	}
+	}
+}

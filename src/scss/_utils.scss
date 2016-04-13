@@ -1,0 +1,228 @@
+
+// Font Family
+// $bFont: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+
+
+@font-face {
+    font-family: 'Copernicus-Medium';
+    src: url('../fonts/Copernicus-Medium.eot');
+    src: url('../fonts/Copernicus-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Copernicus-Bold';
+    src: url('../fonts/Copernicus-Bold.eot');
+    src: url('../fonts/Copernicus-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Copernicus-Semibold';
+    src: url('../fonts/Copernicus-Semibold.eot');
+    src: url('../fonts/Copernicus-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-Semibold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Copernicus-BookItalic';
+    src: url('../fonts/Copernicus-BookItalic.eot');
+    src: url('../fonts/Copernicus-BookItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Copernicus-Extrabold';
+    src: url('../fonts/Copernicus-Extrabold.eot');
+    src: url('../fonts/Copernicus-Extrabold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-Extrabold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Copernicus-MediumItalic';
+    src: url('../fonts/Copernicus-MediumItalic.eot');
+    src: url('../fonts/Copernicus-MediumItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-MediumItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Copernicus-Book';
+    src: url('../fonts/Copernicus-Book.eot');
+    src: url('../fonts/Copernicus-Book.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// color pallette
+$green: #009880;
+$hover-green: lighten(#009880,1%);
+$light-green: #F2FAF8;
+$text-green: #009B77;
+$dark-gray: #25282A;
+$light-gray: #ECEBEC;
+$similar-properties-gray: #E5E4E4;
+$bg-gray: #F2F2F2;
+$bg-light-gray: #F7F7F7;
+$header-font-color: #25282A;
+$light-font-color: #A7A4A4;
+$agents-background: #F5F5F5;
+$bg-seafoam: #E9F7F3;
+$red: #FF0000;
+$modal-text: #CCCCCC;
+$bg-light-blue: #E6F1FA;
+$quote-gray: #7a7a7a;
+$footer-gray: #999999;
+
+// base sizes
+$bPadding: 60px;
+
+// breakpoints
+$tiny: 480px;
+$small: 768px;
+$medium: 992px;
+$large: 1280px;
+
+
+// fonts
+$base-font-color: #404041;
+$light-font-color: #999999;
+
+// Defining font family
+$bFont: Arial, "Lucida Grande", sans-serif; 
+$hFontBI: "Copernicus-BookItalic", georgia, serif;
+$hFontM: "Copernicus-Medium", georgia, serif;
+$hFontMI: "Copernicus-MediumItalic", georgia, serif;
+$hFontB: "Copernicus-Bold", georgia, serif;
+
+// Defining font sizes
+$fontMini: 12px;
+$fontTiny: 14px;
+$fontSmall: 15px;
+$fontBase: 16px ;
+$fontSmallMedium: 18px;
+$fontMedium: 20px;
+$fontLargeMedium: 22px;
+$fontLarge: 28px;
+$fontXLarge: 34px;
+$fontXXLarge: 50px;
+$fontHuge: 70px;
+
+
+@mixin hhuge {
+    font-family: $hFontBI;
+    font-size: 36px;
+    line-height: 1.25em;
+    @include breakpoint($small) {
+        font-size: $fontXXLarge;
+    }
+    @include breakpoint($medium) {
+        font-size: $fontHuge;
+        line-height: 1.35em;
+    }
+}
+
+@mixin hxxlarge {
+    font-family: $hFontBI;
+    font-size: $fontXXLarge/2;
+    line-height: 1.2*($fontXXLarge/2);
+    @include breakpoint($small) {
+        font-size: $fontXXLarge;
+        line-height: 1.2*$fontXXLarge;
+    }
+}
+
+@mixin hxlarge ($font) {
+    font-family: $font;
+    font-size: $fontSmallMedium;
+    line-height: 1.55*$fontSmallMedium;
+    @include breakpoint($small) {
+        font-size: $fontXLarge;
+        line-height: 1.55*$fontXLarge;
+    }
+}
+
+@mixin hlarge {
+    font-family: $hFontMI;
+    font-size: $fontLarge;
+    line-height: 1.35*$fontLarge;
+}
+
+@mixin hlmedium ($font) {
+    font-family: $font;
+    font-size: $fontSmallMedium;
+    line-height: 1.5*$fontSmallMedium;
+    @include breakpoint($medium) {
+        font-size: $fontLargeMedium;
+        line-height: 1.5*$fontLargeMedium;
+    }
+}
+
+@mixin hmedium {
+    font-family: $hFontM;
+    font-size: $fontMedium;
+}
+
+@mixin hsmedium ($font){
+    font-family: $font;
+    font-size: $fontSmallMedium;
+    line-height: 1.5*$fontSmallMedium;
+}
+
+@mixin hbase ($font){
+    font-family: $font;
+    font-size: $fontBase;
+    line-height: 1.625*$fontBase;
+}
+
+@mixin bbase {
+    font-size: $fontBase;
+    font-family: $bFont;
+    line-height: 1.625*$fontBase;
+}
+
+@mixin bbasebold {
+    font-size: $fontBase;
+    font-family: $bFont;
+    font-weight: 700;
+}
+
+@mixin hsmall ($font) {
+    font-family: $font;
+    font-size: $fontSmall;
+    line-height: 1.45*$fontSmall;
+}
+
+@mixin btiny ($font){
+    font-family: $font;
+    line-height: 1.5*$fontTiny;
+    font-size: $fontTiny;
+}
+
+@mixin hmin ($font){
+    font-family: $font;
+    font-size: $fontMini;
+    line-height: 1.2*$fontMini;
+    font-weight: 700;
+}
+
+
+
+
+
+
+

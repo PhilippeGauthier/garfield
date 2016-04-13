@@ -1,0 +1,80 @@
+	.social {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		display: inline-block;
+		min-width: 162px;
+		&.block {
+			display: block;
+			width: 100%;
+		}
+		&.desktop {
+			display: none;
+			@include breakpoint($medium){
+				display: inline-block;
+				margin: 0;
+			}
+		}
+		&.mobile {
+			display: block;
+			@include breakpoint($medium){
+				display: none;
+			}
+		}
+		a {
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			border-radius: 50%;
+			transition: all .15s;
+		}
+		i {
+			position: relative;
+			font-size: 18px;
+			@include vertical-align;
+			&.fa-envelope {
+				font-size: 15px;
+				top: 44%;
+			}
+		}
+
+		&.left-align {
+			a {
+				margin-right: 5px;
+			}
+		}
+		&.right-align {
+			text-align: right;
+			a {
+				margin-left: 5px;
+			}
+		}
+		&.center-align {
+			text-align: center;
+		}
+		&.gray {
+			@include social(39px, $light-font-color);
+		}
+		&.light {
+			@include social(39px, $modal-text);
+		}
+		&.green {
+			@include social(39px, $text-green);
+		}
+		&.footer {
+			text-align: right;
+			@include social(39px, $footer-gray);
+			margin-top: 0;
+			margin-bottom: 0;
+			border: none;
+			
+			a {
+				background: none;
+				border: none;
+				margin: 0;
+				&:hover {
+					color: white;
+					background:none;
+				}
+			}
+		}	
+	}

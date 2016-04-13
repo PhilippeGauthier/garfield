@@ -1,0 +1,82 @@
+
+
+.agents {
+	padding-top: 0;
+	h1, p {
+		@include squish(1 of 8);
+	}
+	p {
+		@include hlmedium($hFontM);
+		margin-top: 2.5em;
+		margin-bottom: 2.5em;
+		@include clearfix;
+	}
+	img {
+		border: 3px solid white;
+		transition: all .3s;
+	}
+	a:first-of-type {
+		display: inline-block;
+	}
+	span {
+		display: block;
+		&.name {
+			@include hlmedium($hFontMI);
+			margin: 1em auto;
+		}
+		&.details {
+			@include hmin($hFontM);
+			margin-bottom: 1em;
+		}
+	}
+	a:hover, .name:hover {
+		img {
+			border: 3px solid $text-green;
+		}
+		svg * {
+			fill: $text-green;
+		}
+		span {
+			color: $text-green;
+		}
+	}
+	.grid-3-constrained-padding {
+		* {
+			vertical-align: middle;
+		}
+		img {
+			max-width: 200px;
+			@include breakpoint($tiny) {
+				max-width: 125px;
+			}
+			@include breakpoint($small) {
+				max-width: 200px;
+			}
+			
+		}
+		svg {
+			width: 20px;
+			height: 20px;
+			margin: 0;
+		}
+		p {
+			margin-bottom: 10px;
+		}
+		&.international {
+			img {
+				filter: grayscale(100%);
+			}
+		}
+	}
+	.divider {
+		@include clearfix;
+		margin-bottom: $bPadding;
+		span {
+			font-weight: 700;
+			font-size: 14px;
+			display: inline-block;
+			padding: 0 20px 30px 20px;
+			border-bottom: 1px solid $dark-gray;
+		}
+	}
+}

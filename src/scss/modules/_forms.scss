@@ -1,0 +1,123 @@
+.website {
+	display: none;
+}
+
+.input-clear {
+	@include clearfix;
+	margin-bottom: 15px;
+	.form {
+		@include breakpoint($medium) {
+			@include gallery(1 of 2 after .025 break);
+		}
+	}
+	.form-full {
+		@include span(full no-gutter break);
+		@include clearfix;
+		textarea {
+			height: 100px;
+			text-align: top;
+		}
+	}
+	.form-half {
+		@include breakpoint($medium) {
+			@include span(6 of 12 no-gutter);
+			@include pre(3 of 13);		
+		}
+
+	}
+
+	form {
+		text-align: center;
+	}
+	input[type=text], input[type=email], input[type=date], input[type=time],select, textarea {
+		@include span(full);
+		margin-bottom: gutter(6);
+		padding: 10px 10px;
+		border: 1px solid $dark-gray;
+		border-radius: 2px;
+		font-family: $hFontM;
+		font-size: 14px;
+		
+		&:focus, &:active {
+			outline-color: $text-green;
+			outline-width: 2px;
+		}
+		@include breakpoint($small) {
+			font-size: 16px;
+			padding: 10px 10px;
+		}
+	}
+}
+
+.input-clear select {
+	padding: 20px;
+	height: 47px;
+	border-radius: 2px;
+
+	@include breakpoint($medium) {
+		padding: 30px;
+	}
+}
+
+input, select {
+	color: $dark-gray;
+	&.btn-garfield {
+		margin: auto;
+		@include btn-garfield(10px, 120px, 20px);
+		max-width: 100%;
+		&:hover {
+			border: 1px solid $text-green;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+	&.radio {
+		text-align: left;
+	}
+}
+
+::-webkit-input-placeholder {
+   color: darken($modal-text, 20%);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: darken($modal-text, 20%);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: darken($modal-text, 20%);
+}
+
+:-ms-input-placeholder {  
+   color: darken($modal-text, 20%);
+}
+
+.email-signup {
+	input {
+		background-color: $dark-gray;
+		border: 1px solid white;
+		border-right: none;
+		padding: 14px 0 14px 10px;
+		font-style: italic;
+		font-size: 15px;
+		color: white;
+		&:focus {
+			outline: none;
+		}
+		&:active {
+			color: white;
+		}
+	}
+	.submit {
+		padding: 14px;
+		background-color: $text-green;
+		color: white;
+		border: 1px solid white;
+		border-left: none;
+		margin-left: -5px;
+		&:hover {
+			background-color: $hover-green;
+		}
+	}
+}

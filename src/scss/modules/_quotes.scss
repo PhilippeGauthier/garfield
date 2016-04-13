@@ -1,0 +1,72 @@
+.quote, .person, .description {
+	text-align: center;
+}
+.person, .description {
+	font-size: 14px;
+	line-height: 20px;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: $quote-gray;
+}
+
+.description {
+	
+}
+
+.quote {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 65%;
+  z-index: 100;
+  img {
+  	display: inline-block;
+  	position: relative;
+  	width: auto;
+  	text-align: center;
+  }
+}
+
+.quote-content {
+	display: inline-block;
+	@include hsmall($hFontMI);
+	@include breakpoint($small) {
+		@include hsmedium($hFontMI);
+	}
+	z-index: 100;
+	color: $quote-gray;
+	.quote-symbol {
+		position: absolute;
+		&.left {
+			left: -35px;
+		}
+		&.right {
+			right: -35px;
+		}
+		display: none;
+		@include breakpoint($tiny) {
+			display: inline-block;
+		}
+		@include breakpoint($small) {
+			display: none;
+		}
+		@include breakpoint($medium) {
+			display: inline-block;;
+		}
+	}
+}
+
+.person {
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: 30px;
+	display: inline-block;
+	color: $quote-gray;
+}
+
+.service-quote {
+	position: relative;
+}

@@ -1,0 +1,401 @@
+
+.property-page {
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	aside {
+		display: none;
+	}
+	.details-small {
+		@include clearfix;
+	}
+	@include breakpoint($small) {
+
+		.container {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+	@include breakpoint($medium) {
+		aside {
+			display: block;
+		}
+		.details-small {
+			display: none;
+		}
+	}
+	.sticky-wrapper {
+		position: relative;
+		@include span(320px no-gutter);
+		aside {
+			&.stuck {
+
+				.property-agents {
+					margin-top: 30px;
+				}
+			}
+		}
+	}
+}
+
+.desktop {
+	display: none;
+	@include breakpoint($medium) {
+		display: block;
+	}
+}
+.mobile {
+	display: block;
+	@include breakpoint($medium) {
+		display: none;
+	}
+}
+
+.property-info {
+	padding: 15px;
+	@include breakpoint($small) {
+		padding: 30px;
+	}
+	margin-bottom: 30px;
+	background-color: #fff;
+	@include clearfix;
+
+	.content {
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 30px;
+	}
+	.divider {
+		border-right: 1px solid $light-font-color;
+		height: 100%;
+		margin: 0 10px 0 5px;
+	}
+	.property-header {
+		h2 {
+			font-size: 32px;
+			line-height: 40px;
+			margin-bottom: 10px;
+		}
+		@include breakpoint($small) {
+			h2 {
+				font-size: 40px;
+				line-height: 50px;
+
+			}
+		}
+		@include breakpoint($medium) {
+			h2 {
+				font-size: 50px;
+				line-height: 60px;
+
+			}
+		}
+
+	}
+	.property-top-bar {
+		position: relative;
+		@include flex-hor;
+		justify-content: space-between;
+		padding-bottom: 5px;
+		span {
+			font-family: $hFontM;
+			font-size: 12px;
+			line-height: 23px;
+			color: $base-font-color;
+			@include breakpoint($medium) {
+				font-size: 15px;
+			}
+		}
+	}
+	.open-house {
+		padding-bottom: 15px;
+		.o-h-span {
+			display: none;
+			&.display {
+				display: inline-block;
+			}
+		}
+		span {
+			bottom: 0;
+			font-size: 13px;
+			line-height: 20px;	
+			@include breakpoint($medium) {
+				font-size: 14px;
+				line-height: 16px;
+			}
+			color: $modal-text;
+			&.red {
+				color: $red;
+				display: inline-block;
+			}
+			&.oh-divider {
+				color: $red;
+				display: none;
+				padding: 0 10px;
+				@include breakpoint($medium) {
+					&.display {
+						display: inline-block;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+.dotted {
+	border-bottom: 1px dotted $light-font-color;
+	vertical-align: bottom;
+	margin-bottom: 15px;
+	width: 100%;
+	@include clearfix;
+	&.first {
+		margin-bottom: 0;
+	}
+	@include breakpoint($large) {
+		margin-bottom: 30px;
+	}
+}
+
+.property-carousel {
+	width: 100%;
+	img {
+		max-height: 246px;
+		text-align: center;
+		margin: auto;
+	}
+	@include breakpoint($small) {
+		img {
+			max-height: 600px;
+		}
+	}
+
+	background-color: $bg-light-gray;
+}
+
+.agent-container {
+	margin-right: 30px;
+}
+
+.agent-internal {
+	@include clearfix;
+	@include breakpoint($medium) {
+		display: none;
+	}
+}
+
+.property-agents {
+	&.aside {
+		margin-top: 145px;
+		&.openhouse {
+			margin-top: 185px;
+		}
+	}
+	&.mobile {
+		display: flex;
+		flex-flow: row wrap;
+		.agent-block {
+			min-width: 50%;
+		}
+
+		.agent-details {
+			margin-left: 10px;
+			@include breakpoint($small) {
+				margin-left: 0;
+			}	
+		}
+	}
+	@include clearfix;
+	color: $header-font-color;
+	a {
+		display: block;
+	}
+	li {
+		margin-bottom: 0;
+	}
+	span {
+		@include hsmedium($hFontMI);
+		margin-top: 0;
+		display: block;
+		margin-bottom: 5px;
+	}
+	.agent-block {
+		padding: 10px 0;
+		&:last-of-type {
+		 border-bottom: none;
+		}
+		@include flex-hor;
+		@include clearfix;
+		@include breakpoint($medium) {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: flex-start;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px dotted $light-font-color;
+		}
+		@include breakpoint($large) {
+			@include flex-hor;
+			border-bottom: none;
+			span {
+				margin-bottom: 10px;
+			}
+			li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+	.agent-image {
+		@include clearfix;
+		text-align: center;
+		max-width: 33%;
+		@include breakpoint($medium) {
+			text-align: left;
+			img {
+				max-width: 100%;
+			}
+		}
+		
+		padding-right: 10px;
+	}
+	.agent-details {
+		max-width: 66%;
+		li {
+			padding-left: 5px;
+		}
+		@include breakpoint($large) {
+			li {
+				padding-left: 0;
+
+			}
+			margin-left: 0;
+		}
+	}
+
+	img {
+		border-radius: 50%;
+		border: 2px solid $bg-gray;
+		max-width: 100px;
+		&:hover {
+			border: 2px solid $text-green;
+		}
+	}
+
+	li:hover {
+		color: $text-green;
+		a {
+			color: $text-green;
+		}
+		svg * {
+			fill: $text-green;
+		}
+	}
+	li, a {
+		vertical-align: top;
+		font-family: $hFontM;
+		font-size: 11px;
+	}
+	li {
+		@include flex-hor;
+	}
+	svg {
+		margin-right: 5px;
+		height: 20px;
+		width: 20px;
+
+	}
+
+}
+
+.property-downloads {
+	position: relative;
+	@include clearfix;
+	a {
+		@include gallery(1 of 2 after);
+		text-align: center;
+		@include breakpoint($medium) {
+			text-align: left;
+		}
+		margin-bottom: 20px;
+		&:hover {
+			* {
+				color: $text-green;
+				fill: $text-green;
+			}
+		}
+	}
+	svg, span {
+		vertical-align: middle;
+		color: $light-font-color
+	}
+	svg {
+		margin-right: 5px;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		* {
+			fill: $light-font-color;
+		}
+	}
+	
+}
+
+.property-schedule {
+	text-align: center;
+
+	a {
+		background-color: $green;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: block;
+		color: white;
+		border-radius: 0;
+		margin: 0 auto;
+		text-align: center;
+		margin-bottom: 15px;
+		text-transform: uppercase;
+		max-width: 345px;
+		&:hover {
+			background-color: $hover-green;
+			color: white;
+		}
+		@include breakpoint($large) {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.summary {
+	width: 100%;
+	margin-top: 30px;
+	@include hbase($hFontM);
+	@include clearfix;
+	&.mobile {
+		margin-top: 15px;
+	}
+	.small {
+		@include hmin($hFontM);
+		color: darken($modal-text,10%);
+
+	}
+	.legal {
+		margin: 45px 0;
+	}
+	.read-more-expander {
+		margin-top: 10px;
+		i {
+			color: $dark-gray;
+		}
+		span {
+			margin-left: 5px;
+		}
+		&:hover {
+			span, i {
+				color: $text-green;
+			}
+		}
+	}
+}
+
+

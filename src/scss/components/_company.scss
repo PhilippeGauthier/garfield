@@ -1,0 +1,53 @@
+.company-hero {
+	padding-top: 200px;
+	padding-bottom: 200px;
+	h1 {
+		margin-top: 0;
+	}
+}
+
+.company {
+	text-align: center;
+	@include breakpoint($medium) {
+		@include pre(2.75 of 12);
+		@include span(6.5 of 12);		
+	}
+	svg {
+		max-width: 100%;
+	}
+	h3 {
+			
+	}
+	p {
+		text-align: left
+	}
+	.divider {
+		height: 1px;
+		width: 200px;
+		background-color: $dark-gray;
+		margin: 30px auto;
+	}
+	&.beliefs, &.why {
+		p, span {
+			text-align: center;
+		}
+	}
+	.beliefs {
+		p {
+			font-family: $bFont;
+			font-size: 23px;
+			line-height: 33px;
+		}
+	}
+	&.why {
+		h3 {
+			text-transform: uppercase;
+		}
+		background-image: url("../img/G.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	a {
+		@include hbase($hFontMI);
+	}
+}

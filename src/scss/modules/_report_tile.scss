@@ -1,0 +1,193 @@
+
+.reports {
+	.grid-constrained {
+		margin-top: 60px;
+		@include pre(1);
+		@include post(1);	
+		@include breakpoint($tiny) {
+			@include pre(0);
+			@include post(0);	
+		}
+		@include breakpoint($small) {
+			@include pre(1);
+			@include post(1);			
+		}
+
+	}
+	.grid-3-constrained:nth-child(6n+1) {
+		.report-tile {
+			$color: #009B77;
+			border-top: 2px solid $color;
+			border-bottom: 2px solid $color;
+			h4, span {
+				color: $color;
+			}
+		}
+	}
+	.grid-3-constrained:nth-child(6n+2) {
+		.report-tile {
+			$color: #a6978a;
+			border-top: 2px solid $color;
+			border-bottom: 2px solid $color;
+			h4, span {
+				color: $color;
+			}
+		}
+	}
+	.grid-3-constrained:nth-child(6n+3) {
+		.report-tile {
+			$color: #f7d880;
+			border-top: 2px solid $color;
+			border-bottom: 2px solid $color;
+			h4, span {
+				color: $color;
+			}
+		}
+	}
+	.grid-3-constrained:nth-child(6n+4) {
+		.report-tile {
+			$color: #86bbe6;
+			border-top: 2px solid $color;
+			border-bottom: 2px solid $color;
+			h4, span {
+				color: $color;
+			}
+		}
+	}
+	.grid-3-constrained:nth-child(6n+5) {
+		.report-tile {
+			$color: #fabcad;
+			border-top: 2px solid $color;
+			border-bottom: 2px solid $color;
+			h4, span {
+				color: $color;
+			}
+		}
+	}
+	.grid-3-constrained:nth-child(6n+6) {
+		.report-tile {
+			$color: #00698c;
+			border-top: 2px solid $color;
+			border-bottom: 2px solid $color;
+			h4, span {
+				color: $color;
+			}
+		}
+	}
+	.expander-next {
+		margin-top: $bPadding;
+		margin-bottom: $bPadding;
+		display: block;
+		span {
+			@include bbase;
+			font-weight: 700;
+		}
+		&:hover span {
+			color: $text-green;
+		}
+	}
+	&.signup {
+		h2,h3 {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		h2 {
+			font-family: $hFontMI;
+			font-size: 34px;
+		}
+		h3 {
+			font-family: $hFontM;
+			font-size: 16px;
+			line-height: 24px;
+		}
+		form {
+			@include breakpoint($tiny) {
+				@include pre(2 of 12);
+				@include post(2 of 12);				
+			}
+
+			text-align: center;
+		}
+		input {
+			width: 100%;
+			padding: 10px;
+			font-family: $hFontM;
+			border: 1px solid lighten($header-font-color,50%);
+		}
+		.form-group {
+			margin-bottom: 10px;
+			@include breakpoint($small) {
+				margin-bottom: gutter(6);
+			}
+		}
+		.full-span, .half-span {
+			@include span(2 of 2 .025);
+		}
+		.half-span-center {
+			@include span(2 of 2 .025);
+		}
+		#mce-responses {
+			@include clearfix;
+		}
+		@include breakpoint($small) {
+			.half-span {
+				@include pre(.5 of 2);
+				@include span (1 of 2);
+			}
+			.half-span-center {
+				@include pre(.5 of 2);
+				@include span (1 of 2 .025);
+			}
+		}
+		@include breakpoint($small) {
+			.half {
+				@include span (1 of 2 .025);	
+				@include clearfix;
+			}
+		}
+		.submit {
+			@include btn-garfield(10px, 10px,14px);
+			width: 100%;
+		}
+		button {
+
+		}
+	}
+}
+
+.report-tile {
+	padding: 30px;
+	margin: 10px auto;
+	@include breakpoint($tiny) {
+		margin: 20px;
+	}
+	background-color: #fff;
+	display: block;
+	border: 1px solid transparent;
+	transition: all 100ms ease;
+	&:hover {
+		background-color: $text-green;
+		border-top: 2px solid $text-green !important;
+		border-bottom: 2px solid $text-green !important;
+		* {
+			color: white !important;
+		}
+	}
+	h3 {
+		@include hlmedium($hFontMI);
+		height: 200px;
+		margin-top: 10px;
+	}
+	h4 {
+		margin-top: 0;
+		text-transform: uppercase;
+		font-family: $bFont;
+		font-weight: 700;
+		font-size: 12px;
+		margin-bottom: 30px;
+	}
+	span {
+		font-size: 12px;
+	}
+}
+

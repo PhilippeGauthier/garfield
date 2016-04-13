@@ -1,0 +1,207 @@
+
+#properties {
+	display: flex;
+	flex-flow: column nowrap;
+	flex: 1 1 auto;
+	&:first-child {
+		min-height: 100%;
+	}
+	section {
+		padding-top: 15px;
+		@include breakpoint($tiny) {
+			padding-top: 54px;
+		}
+		a {
+			margin: 0;
+		}
+	}
+}
+
+.property_container {
+	width: 100%;
+	flex: 1 1 auto;
+}
+
+.property_search {
+	display: flex;
+	flex-flow: column nowrap;
+	flex: 1 ;
+	min-height: 100%;
+}
+
+.property_grid {
+	min-height: 100%;
+}
+
+.tile-container {
+	padding-top: $bPadding;
+	margin: 0 15px;
+	@include breakpoint($tiny) {
+		margin: 0 45px;
+	}
+}
+.carousel_tile, .property_tile {
+	a {
+		padding: 10px;
+		position: relative;
+		@include clearfix;
+	}
+	@include breakpoint($small) {
+		a {
+			margin: 10px;
+		}
+	}
+}
+
+.carousel_tile_1 {
+	@include pre(4 of 12);
+	@include span(4 of 12 no-gutter);
+	&.agent_tile {
+		@include pre(2 of 12);
+		@include span (8 of 12 no-gutter);
+	}
+}
+.carousel_tile_2 {
+	@include span(full no-gutter);
+	&.main_tile, &.agent_tile {
+		@include span(full no-gutter);
+		@include breakpoint($small) {
+			@include pre(.65 of 12);
+			@include span (10.7 of 12 no-gutter);
+		}
+		
+		.slick-prev:before {
+			margin-left: -20px;
+		}
+		.slick-next:before {
+			margin-left: -50px;
+		}
+		
+	}
+	@include breakpoint($large) {
+		@include pre(2 of 12);
+		@include span(8 of 12 no-gutter);
+
+	}
+}
+
+
+
+.property_box {
+	display: flex;
+	flex-flow: row nowrap;
+	position: relative;
+	background-color: #fff;
+	&:hover, &:focus {
+		h3,h4 {
+			color: $header-font-color;
+		}
+		box-shadow: 0px 0px 0px 1px $green;
+		transition: .25s;
+		.preview-image {
+			transform: scale(1.1);
+		}
+	}
+	&.map {
+		&:hover, &:focus {
+			box-shadow: none;
+		}
+	}
+	.image-wrap {
+		@include span(5 of 8 no-gutter);
+		position: relative;
+		overflow: hidden;
+		height: 270px;
+		@include breakpoint($tiny) {
+			@include span(4 of 8 no-gutter);
+			height: 300px;
+		}
+		
+	}
+	.preview-image {
+		height: 100%;
+		width: 100%;
+		transition: all 300ms ease-in-out;
+		position: absolute;
+		background-color: $light-gray;
+		background-size: cover;
+		text-align: center;
+
+	}
+	&.property {
+		padding: 10px;
+	}
+	.sqft {
+		margin-right: 5px;
+	}
+	img {
+		max-height: 300px;
+		max-width: 100%;
+	}
+	.property_tile_info {
+		@include span(last 4 of 8);
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		padding-left: 10px;
+		span {
+			margin: 0;
+			display: block;
+		}
+		.prop-title {
+			@include hbase($hFontMI);
+			@include breakpoint($tiny) {
+				@include hsmedium($hFontMI);
+			}
+		}
+		.prop-price, .bottom-info, .prop-details,.prop-location,.price,.currency,.ownership, .sqft-details {
+			@include hmin($hFontM);
+			line-height: 18px;
+			@include breakpoint($tiny) {
+				@include hsmall($hFontM);
+				font-weight: 500;
+				line-height: 26px;
+			}
+			
+		}
+		.sqft-details {
+			display: inline-block;
+			&.sup {
+				margin-left: 3px;
+			}
+		}
+		.price,.currency, .ownership {
+			display: inline-block;
+		}
+		.bottom-info {
+			color: darken($modal-text, 15%);
+			.red {
+				color: $red;
+			}
+		}
+	}
+	.spacer {
+		height: 1px;
+		border-top: 1px solid $dark-gray;
+		margin: 10px 0;
+		width: 20px;
+	}
+	&:hover, &:focus {
+		h3,h4 {
+			color: $header-font-color;
+		}
+		box-shadow: 0px 0px 0px 1px $green;
+		transition: .25s;
+	}
+}
+
+.gm-style-iw {
+	.property_box {
+		width: 225px;
+		@include breakpoint($tiny) {
+			width: 300px;
+		}
+		
+	}
+}
+

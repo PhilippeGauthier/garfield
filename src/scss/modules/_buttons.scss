@@ -1,0 +1,55 @@
+// .btn-garfield {
+
+// 	padding: 8px 45px;
+// 	font-size: 18px;
+// 	margin-top: 24px;
+
+// }
+
+.btn-contact {
+	@include breakpoint($medium) {
+		padding: 6px 10px;
+		border: 1px solid $text-green;
+		border-radius: 2px;
+		top: 3px;
+		margin-top: 9px;
+		margin-left: 10px;	
+		&:hover, &.current {
+			background-color: $text-green;
+			color: white;
+		}
+	}
+	@include breakpoint($medium) {
+		margin-top: 18px;
+		margin-left: 15px;
+	}
+}
+
+.expander-prev, .expander-next {
+	&.block {
+		display: block;
+	}
+	.green {
+		color: $text-green;
+	}
+	.large {
+		font-size: 19px;
+	}
+	.light-gray {
+		color: #cccccc;
+	}
+	.gray {
+		color: $base-font-color;
+	}
+	span {
+		font-family: $hFontM;
+		margin-left: 10px;
+	}
+	&:hover {
+		i {
+			color: $text-green;
+		}
+	}
+}
+
+

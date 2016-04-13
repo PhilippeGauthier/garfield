@@ -1,0 +1,53 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.sass-cache*
+
+# wwwwroot files #
+######################
+wwwwroot/_cache/*
+wwwwroot/!_cache/index.html
+wwwwroot/_logs/*
+wwwwroot/!_logs/index.html
+wwwwroot/assets/
+wwwwroot/_content/
+wwwwroot/_content/*
+wwwwroot/_config/users/*
+wwwwroot/_forms/*
+.htaccess
+
+
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Design generated files #
+######################
+*.psd
+*.ai
+*.sketch
+
+npm-debug.log
+*.sublime-project
+*.sublime-workspace
+
+node_modules/*
+package.json
+wwwwroot/JSON/*.json
+backup/

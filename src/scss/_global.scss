@@ -1,0 +1,100 @@
+
+/**
+*
+* Global
+*
+**/
+// @include border-box-sizing;
+
+// @include establish-baseline;
+
+html, body, a, span, p {
+  color: $base-font-color;
+  @include bbase;
+}
+
+ul {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+  li {
+    display: inline-block;
+    line-height: 24px;
+  }
+}
+
+a {
+  text-decoration: none;
+  &:hover,&:focus {
+    color: $text-green;
+    text-decoration: none;
+  }
+  .no-click {
+    cursor: default;
+    * {cursor: default;}
+  }
+}
+
+.fa-stack {
+  line-height: 2em !important;
+}
+
+.red {
+  color: $red;
+}
+
+.bg-gray {
+  background-color: $bg-gray;
+}
+
+.bg-light-gray {
+  background-color: $bg-light-gray;
+}
+
+.bg-seafoam {
+  background-color: $bg-seafoam;
+}
+
+.similar-properties-gray {
+  background-color: $similar-properties-gray;
+}
+
+.agents-background {
+  background-color: $agents-background;
+}
+
+.bg-light-blue {
+  background-color: $bg-light-blue;
+}
+
+.light-gray-bg {
+  background-color: $light-gray;
+}
+
+.white {
+  background-color: #fff;
+}
+.dark_gray {
+  background-color: $dark-gray;
+  a,p,span,h1,h2,h3,h4,div, .fa-inverse {
+    color: $light-font-color;
+  }
+  a {
+    &:hover {
+      color: white;
+      * {
+        color: white;
+      }
+    }
+  }
+}
+
+.preview-image {
+  background-size: cover;
+}
+
+// .highlight * {
+// 	font-family: $hFontM;
+// }

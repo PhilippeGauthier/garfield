@@ -1,0 +1,91 @@
+
+
+.hero {
+	width: 100%;
+	background-position: center;
+  background-size: cover;
+	text-align: center;
+	height: 400px;
+	position: relative;
+	padding-top: 0;
+	padding-bottom: 0;
+	&.agents-background {
+		.container {
+			padding-bottom: 0;
+		}
+	}
+	.container {
+		z-index: 10;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		height: 100%;
+	}
+	.hero-container {
+		height: 100%;
+		@include flex-vert;
+	}
+	h1 {
+		margin-bottom: 20px;
+		@include breakpoint($small) {
+			max-width: 70%;
+		}
+		@include breakpoint($large) {
+			max-width: 100%;
+		}
+	}
+	h5 {
+		@include break;
+		margin-top: 0;
+		margin-bottom: 15px;
+	}
+	.mask {
+		z-index: 9;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: black;
+		opacity: .2;
+		height: 100%;
+		width: 100%;
+	}
+	* {
+		color: #fff;
+		z-index: 10;
+		position: relative;
+	}
+	&.dark {
+		h1,h2,h3,h4,h5 {
+			color: $dark-gray;
+		}
+	}
+
+	a {
+		@include btn-garfield(10px, 35px, 10px);
+		margin-top: 15px;
+	}
+	h5 {
+		max-width: 700px;
+	}
+	@include breakpoint($medium) {
+		height: 550px;
+		&.agents-background {
+			height: 450px;
+		}
+		.a
+		h1 {
+			margin-bottom: 0;
+		}
+
+		a {
+			@include btn-garfield(20px, 70px, 12px);
+		}
+		&.landing {
+			h5 {
+				max-width: 500px;
+			}
+		}
+	}
+}	
+

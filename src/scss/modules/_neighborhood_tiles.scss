@@ -1,0 +1,23 @@
+.neighborhood-tile {
+	padding: 10px;
+	margin: 10px;
+	background-color: #fff;
+	display: block;
+	border: 1px solid transparent;
+	transition: all 100ms ease;
+	.neighborhood-title {
+		@include hlarge;
+		margin-bottom: 60px;
+		margin-top: 10px;
+	}
+	&:hover {
+		border: 1px solid $text-green;
+		h2 {
+			color: $text-green;
+		}
+	}
+	.preview-image {
+		height: 260px;
+		width: 100%;
+	}
+}

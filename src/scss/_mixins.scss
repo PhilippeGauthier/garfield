@@ -1,0 +1,77 @@
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin clearfix {
+	&:before, &:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+@mixin circle-position($size) {
+	top: -$size/2
+}
+
+@mixin circle($size) {
+	border-radius: 50%;
+	height: $size;
+	width: $size;
+  padding: $size/10;
+}
+
+@mixin flex-vert {
+	display: flex;
+	justify-content: center;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+
+@mixin flex-hor {
+	display: flex;
+	align-items: center;
+	flex-flow: row nowrap;
+}
+
+@mixin svg-size($size) {
+    height: $size - ($size/10)*2;
+    width: $size - ($size/10)*2;
+}
+
+@mixin btn-garfield ($padding-top, $padding-side, $font-size) {
+	border-radius: 0;
+	background-color: $green;
+	padding: $padding-top $padding-side;
+	font-size: $font-size;
+	border: 1px solid $green;
+	border-radius: 0;
+	color: white;
+	text-transform: uppercase;
+	&:hover, &:focus {
+		color: white;
+		background-color: $hover-green;
+	}
+}
+
+@mixin social($size, $color) {
+		color: $color;
+		a {
+			color: $color;
+			height: $size;
+			width: $size;
+			border: 1px solid $color;
+			&:hover {
+				color: white;
+				background-color: $color;
+			}
+		}
+		i {
+			line-height: $size;
+		}
+}

@@ -1,0 +1,24 @@
+.circle-leader {
+	$size: 80px;
+	width: 100%;
+	position: absolute;
+	@include circle-position($size);
+	left: 0;
+	right: 0;
+	text-align: center;
+	@include clearfix;
+	h4 {
+		@include clearfix;
+	}
+	.circle {
+		margin: 0 auto 12px;
+		box-sizing: border-box;
+		@include circle($size);
+		svg {
+			@include svg-size($size);
+			* {
+				// fill: $base-font-color;
+			}
+		}
+	}
+}

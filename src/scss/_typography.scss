@@ -1,0 +1,135 @@
+
+// Font Family
+// $bFont: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+$bFont: Arial, "Lucida Grande", sans-serif; 
+$hFontM: "Copernicus-Medium";
+$hFontB: "Copernicus-Bold";
+$hFontBI: "Copernicus-BookItalic";
+$hFontMI: "Copernicus-MediumItalic";
+
+@font-face {
+    font-family: 'Copernicus-Medium';
+    src: url('../fonts/Copernicus-Medium.eot');
+    src: url('../fonts/Copernicus-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Copernicus-Bold';
+    src: url('../fonts/Copernicus-Bold.eot');
+    src: url('../fonts/Copernicus-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Copernicus-Semibold';
+    src: url('../fonts/Copernicus-Semibold.eot');
+    src: url('../fonts/Copernicus-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-Semibold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Copernicus-BookItalic';
+    src: url('../fonts/Copernicus-BookItalic.eot');
+    src: url('../fonts/Copernicus-BookItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-BookItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Copernicus-MediumItalic';
+    src: url('../fonts/Copernicus-MediumItalic.eot');
+    src: url('../fonts/Copernicus-MediumItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Copernicus-MediumItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1,h2,h3,h4, h5 {
+    font-weight: 100;
+    margin: 0;
+}
+
+h1 {
+    @include hhuge;
+    font-weight: 100;
+}
+
+h2 {
+    @include hxxlarge;
+}
+h3 {
+    @include hxlarge($hFontM);
+}
+h4 {
+    @include hmin($bFont);
+}
+
+h5 {
+    @include hsmedium($hFontM);
+    @include breakpoint($large) {
+        @include hlmedium($hFontM);
+    }
+}
+
+p {
+	font-family: $hFontM;
+	font-size: 15px;
+	line-height: 25px;
+    @include breakpoint($medium) {
+        font-size: 16px;
+        line-height: 26px
+    }
+    &.no_results {
+        @include hlmedium($hFontMI);
+        margin-top: $bPadding;
+        @include pre(2 of 12);
+        @include span (8 of 12);
+        text-align: center;
+    }
+    &.light {
+        font-size: 13px;
+        line-height: 18px;
+        font-family: $bFont;
+        font-weight: 100;
+        color: lighten($dark-gray,40%);
+        text-align: center;
+    }
+    &.intro-section {
+        @include hlmedium($hFontM);
+        text-align: center;
+    }
+}
+
+&.large {
+    p {
+        @include hlmedium($hFontM);
+        text-align: center;
+    }
+}
+
+.section-title {
+    @include hsmedium($bFont);
+    font-weight: 700;
+    text-align: center;
+}
+// .container.large-body {
+//     h3 {
+//         margin-top: 0;
+//         margin-bottom: $bPadding;
+//         display: block;
+//     }
+//     p {
+//         font-size: 25px;
+//         line-height: 40px;
+//         margin-top: 0;
+//     }
+// }

@@ -1,0 +1,123 @@
+.numbers {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	@include clearfix;
+	h1,h3 {
+		font-family: $hFontB;
+		text-align: center;
+	}
+	h1 {
+		margin: 0;
+		font-weight: 700;
+		font-size: 60px;
+	}
+	h3 {
+		margin: 0;
+		font-size: 23px;
+		line-height: 27px;
+		padding: 0 20px;
+	}
+	@include breakpoint($tiny) {
+		h1 {
+			font-size: 80px;
+		}
+	}
+	@include breakpoint($small) {
+		padding-top: $bPadding;
+		h1 {
+			font-size: 127px;
+		}
+		h3 {
+
+		}
+	}
+
+	svg {
+		width: 100%;
+	}
+	.full {
+		padding: 0 30px;
+		@include breakpoint($small) {
+			padding: 0 120px;
+		}
+		@include breakpoint($medium) {
+			padding: 0 $bPadding;
+			.divider {
+				display: none;
+			}
+			border-right: 1px solid $dark-gray;
+		}
+	}
+	.half {
+		@include gutters(.55 split);
+		position: relative;
+		.descriptor {
+			position: absolute;
+			display: flex;
+			height: 95%;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+			flex-flow: column nowrap;
+		}
+		.price {
+			font-family: $hFontM;
+			font-size: 32px;
+			line-height: 66px;
+			&.tilted {
+				transform: rotate(-22deg);
+				color: white;
+				margin-right: 70px;
+				font-size: 24px;
+			}
+		}
+		@include breakpoint($tiny) {
+			.price {
+				font-size: 56px;
+				&.tilted {
+					font-size: 40px;
+					margin-right: 120px;
+				}
+			}
+		}
+		h1 {
+			font-family: $hFontM;
+			font-weight: 100;
+		}
+	}
+	.price-descriptor {
+		font-family: $hFontB;
+		font-size: 12px;
+		display: block;
+		text-align: center;
+		max-width: 80%;
+		text-align: center;
+		margin: 0 auto;
+		.first-letter {
+			font-family: $hFontB;
+			font-size: 16px;
+		}
+		@include breakpoint($tiny) {
+			font-size: 14px;
+			.first-letter {
+				font-size: 18px;
+			}
+		}
+		@include breakpoint($large) {
+			font-size: 16px;
+			.first-letter {
+				font-size: 20px;
+			}
+		}
+	}
+	.divider {
+		width: 250px;
+		@include breakpoint($large) {
+			width: 400px;
+		}
+		position: relative;
+		margin: 30px auto;
+		height: 1px;
+		background-color: $dark-gray;
+	}
+}
